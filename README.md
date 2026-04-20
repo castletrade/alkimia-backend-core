@@ -1,26 +1,38 @@
-# 🏛️ Alkimia Backend Core
+# Alkimia Backend Core | Fintech Infrastructure
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Alkimia Backend Core is the foundation of Castle Trade's financial services ecosystem, engineered for high-availability, precision auditing, and global scalability.
 
-> **Property of Castle Trade LLC.** Institutional Fintech infrastructure for the Alkimia global artist booking ecosystem.
+## Architectural Architecture
 
-## About
-`alkimia-backend-core` serves as the financial and data orchestration layer for the Alkimia platform. Designed to handle high-volume international artist bookings, this repository showcases a modular, secure, and scalable backend architecture.
+The platform utilizes a distributed microservices architecture designed to manage complex financial flows with ACID-compliant integrity.
 
-### Core Features
-- **Stripe Connect Integration**: Robust handling of complex marketplace payment flows, including multi-party payouts, escrow management, and automated onboarding.
-- **Asynchronous Webhook Processing**: Event-driven architecture for real-time payment status updates using signature-verified webhooks.
-- **Modular Data Persistence**: Clean abstraction layer for PostgreSQL/Supabase, ensuring data integrity and scalability for global operations.
-- **Secure Workflow Design**: Implementation of artist booking state machines to ensure financial observability and transaction safety.
+### Distributed Architecture
 
-## Repository Structure
-- `src/api/stripe_integration.py`: High-level handler for Stripe Connect interactions and webhook management.
-- `src/db/supabase_client.py`: Modular database client encapsulating business logic for artist and booking records.
+The system is deployed across multiple availability zones to ensure zero downtime for payment processing. 
+- **API Gateway**: Orchestrates traffic and enforces rate-limiting.
+- **Event Mesh**: Asynchronous processing of non-critical tasks via message queuing.
+- **Service Layer**: Decoupled modules for payment logic, authentication, and ledger management.
 
-## Scalability & Security
-- **Internationalization**: Support for multi-currency transactions and localized artist metadata.
-- **Compliance**: Designed with modern fintech standards for secure artist onboarding and payout verification.
-- **Error Resilience**: Comprehensive logging and fault-tolerant API handling.
+### Financial Data Integrity
+
+To maintain institutional-grade records, the platform follows strict protocols:
+- **Double-Entry Ledger Architecture**: Every transaction is recorded with immutable audit trails.
+- **Idempotency Keys**: Enforced across all API endpoints to prevent duplicate processing of financial events.
+- **Periodic Reconciliation**: Automated scripts that verify internal state against external provider (Stripe) data.
+
+### International Payment Flows
+
+Alkimia is built to support global operations through Stripe Connect:
+- **Multi-Currency Support**: Automated conversion and settlement logic.
+- **Compliance Guardrails**: Sanction screening and jurisdictional validation integrated into the onboarding flow.
+- **Stripe Connect Integration**: Managed handling of platform fees, vendor payouts, and escrow releases.
+
+## Core Features
+- **Secure Webhook Ingestion**: Signature-verified event handling for high-integrity payment updates.
+- **Supabase Identity Wrapper**: Secure JWT-based authentication with MFA enforcement.
+- **Distributed Observability**: Integrated logging and monitoring for real-time SRE situational awareness.
 
 ---
-*Disclaimer: This repository contains architectural skeletons and does not include production API keys, proprietary database schemas, or sensitive business logic. Unauthorized duplication of Castle Trade LLC infrastructure is prohibited.*
+**Technical Note**: This repository contains the architectural skeleton of the Alkimia Backend. Business-specific alpha logic is abstracted to maintain firm privacy.
+
+(c) 2026 Castle Trade LLC. Proprietary and Confidential.
