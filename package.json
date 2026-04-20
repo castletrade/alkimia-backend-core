@@ -1,0 +1,22 @@
+{
+  "name": "alkimia-backend-core",
+  "version": "1.0.0",
+  "description": "Institutional Fintech Backend Infrastructure",
+  "main": "src/api/stripe_handler.py",
+  "scripts": {
+    "test": "pytest tests/",
+    "lint": "flake8 src/",
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "stripe": "^14.0.0",
+    "supabase": "^2.3.0",
+    "flask": "^3.0.0",
+    "python-dotenv": "^1.0.0"
+  },
+  "devDependencies": {
+    "pytest": "^7.4.0",
+    "pytest-asyncio": "^0.21.0",
+    "flake8": "^6.1.0"
+  }
+}
