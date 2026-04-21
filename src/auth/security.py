@@ -6,7 +6,6 @@ Copyright: (c) 2026 Castle Trade LLC. Institutional Fintech Infrastructure.
 
 import logging
 from typing import Dict, Any, Optional
-from gotrue import SyncSupportedStorage
 from supabase import create_client, Client
 
 logger = logging.getLogger(__name__)

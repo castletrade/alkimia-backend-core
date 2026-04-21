@@ -4,10 +4,8 @@ Purpose: API security middleware for rate limiting and signature verification.
 Copyright: (c) 2026 Castle Trade LLC. Institutional Fintech Infrastructure.
 """
 
-from flask import Request, abort
+from flask import Request
 import time
-import hashlib
-import hmac
 
 class SecurityMiddleware:
     """

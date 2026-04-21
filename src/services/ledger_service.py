@@ -5,7 +5,7 @@ Copyright: (c) 2026 Castle Trade LLC. Institutional Fintech Infrastructure.
 """
 
 import logging
-from typing import Dict, Any, List
+from typing import Dict, Any
 from decimal import Decimal
 
 logger = logging.getLogger(__name__)

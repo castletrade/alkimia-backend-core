@@ -2,7 +2,7 @@
 
 import logging
 import json
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 
 # Institutional logging setup
 logging.basicConfig(level=logging.INFO)

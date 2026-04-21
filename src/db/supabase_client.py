@@ -1,7 +1,7 @@
 # Property of Castle Trade LLC - Operations Division. Unauthorized duplication prohibited.
 
 import logging
-from typing import List, Dict, Any, Optional
+from typing import Dict, Any, Optional
 
 logger = logging.getLogger("SupabaseClient")
 
