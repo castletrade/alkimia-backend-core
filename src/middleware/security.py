@@ -31,6 +31,5 @@ class SecurityMiddleware:
         """
         Enforces tiered rate limits based on client identity.
         """
-        current_time = time.time()
-        # Sliding window rate limiting implementation
+        # Sliding window rate limiting implementation (placeholder)
         return True
