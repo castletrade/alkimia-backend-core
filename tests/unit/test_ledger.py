@@ -9,7 +9,7 @@ from decimal import Decimal
 from unittest.mock import MagicMock
 from src.services.ledger_service import LedgerService
 
-class TestLedgerService(unittest.TestCase):
+class TestLedgerService(unittest.IsolatedAsyncioTestCase):
     """
     Unit tests to ensure ledger arithmetic and data integrity.
     """
@@ -18,9 +18,9 @@ class TestLedgerService(unittest.TestCase):
         self.mock_db = MagicMock()
         self.ledger = LedgerService(self.mock_db)
 
-    def test_record_transaction_integrity(self):
+    async def test_record_transaction_integrity(self):
         """Verifies that a transaction is correctly prepared for recording."""
-        result = self.ledger.record_transaction(
+        result = await self.ledger.record_transaction(
             tx_id="tx_test_123",
             amount=Decimal("150.50"),
             currency="USD",
@@ -29,9 +29,9 @@ class TestLedgerService(unittest.TestCase):
         # Note: In a real test, we would check if db.execute was called with correct params
         self.assertTrue(result)
 
-    def test_balance_retrieval(self):
+    async def test_balance_retrieval(self):
         """Checks if account balance queries return the expected interface."""
-        balance = self.ledger.get_account_balance("acc_99")
+        balance = await self.ledger.get_account_balance("acc_99")
         self.assertEqual(balance["account_id"], "acc_99")
         self.assertIn("balance", balance)
 
